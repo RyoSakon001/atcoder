@@ -1,11 +1,12 @@
 # 競技プログラミング用のリポジトリ
 
-１．問題URLのパラメータでブランチを切る。
-２．プログラミング
-３．php atcoder.php で実行
-４．大丈夫なら提出する。
-５．Git HubにPushしておく。masterブランチにはマージしないこと。
-
+<ol>
+    <li>問題URLのパラメータでブランチを切る。</li>
+    <li>プログラミング</li>
+    <li>php atcoder.php で実行</li>
+    <li>大丈夫なら提出する。</li>
+    <li>Git HubにPushしておく。masterブランチにはマージしないこと。</li>
+</ol>
 # template.phpの解説
 
 STDIN: Standard Input(標準入力のこと)

@@ -4,8 +4,9 @@
 
 $n = trim(fgets(STDIN));
 
-list($a, $b) = explode(' ', fgets(STDIN));
+list($a, $b) = explode(' ', trim(fgets(STDIN)));
 
+$i = 0;
 while ($i < $n) {
     $array[$i] = explode(' ', fgets(STDIN));
     $i++;

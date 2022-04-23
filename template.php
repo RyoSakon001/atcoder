@@ -8,7 +8,7 @@ list($a, $b) = explode(' ', trim(fgets(STDIN)));
 
 $i = 0;
 while ($i < $n) {
-    $array[$i] = explode(' ', fgets(STDIN));
+    $array[$i] = explode(' ', trim(fgets(STDIN)));
     $i++;
 }
 

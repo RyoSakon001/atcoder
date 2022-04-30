@@ -1,8 +1,7 @@
 <?php
 
-$i = 1;
-while($i=1; $i<=50000; $i++) {
-    if ($i % 3 == 0 || strpos(strval($i), '3') !== false) $sum += $i;
+for($i=1; $i<=100; $i++) {
+    $a[$i] = pow($i, 4);
 }
 
-echo $sum;
+echo array_sum($a);

@@ -1,20 +1,15 @@
-<!-- https://atcoder.jp/contests/abs/tasks/xxxxxxxxxx -->
-
 <?php
 
 $n = trim(fgets(STDIN));
 
-list($a, $b) = explode(' ', trim(fgets(STDIN)));
+list($a, $b) = array_map("intval", explode(" ", trim(fgets(STDIN))));
 
-$i = 0;
-while ($i < $n) {
+$array = array_map("intval", explode(" ", trim(fgets(STDIN))));
+
+for ($i=0; $i<$n; $i++) {
     $array[$i] = explode(' ', trim(fgets(STDIN)));
-    $i++;
 }
 
-$i = 0;
-while ($i < $n) {
 
-}
-
-echo PHP_EOL;
+$answer = '';
+echo $answer.PHP_EOL;

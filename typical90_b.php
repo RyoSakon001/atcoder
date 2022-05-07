@@ -1,10 +1,11 @@
 <?php
+
 $n = intval(trim(fgets(STDIN)));
 if ($n % 2 != 0) {
     exit();
 }
 for ($i=pow(2,$n-1); $i<pow(2,$n); $i++) {
-    $tmp = sprintf("%0".$n."d", decbin($i));
+    $tmp = sprintf("%0{$n}b", $i); // バイナリ値のformatで行ける！！！
     if (substr_count($tmp, '1') == substr_count($tmp, '0')) $array[] = $tmp;
 }
 $array = str_replace('1', '(', $array);

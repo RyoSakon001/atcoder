@@ -28,5 +28,6 @@ function sushi_choice ($cost_list, $kcal_list, $max) {
         }
     }
 
+    print_r($dp);
     return $dp[$list_len - 1][$max];
 }

@@ -1,5 +1,5 @@
-a = int(input())
-b, c = map(int, input().split())
-s = input()
 
-print(a + b + c, s)
+# 入力された文字列をスペースで分割して数値のリストに変換
+numbers = list(map(int, input().split()))
+
+print(numbers)

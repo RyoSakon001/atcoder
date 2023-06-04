@@ -22,6 +22,11 @@ arr = [2, 4, 6] + ['a', 'b', 'c']
 for i in arr:
     print(i) # 2, 4, 6, 'a', 'b', 'c'
 
+# 文字列操作
+s = 'abc'
+print(s[0]) # a
+
+
 # 最大最小・絶対値
 max(1, 2)
 min(1, 2)

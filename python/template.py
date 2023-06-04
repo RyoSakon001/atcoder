@@ -31,3 +31,17 @@ print(s[0]) # a
 max(1, 2)
 min(1, 2)
 abs(-10)
+
+# UnionFind
+from union_find import UnionFind
+uf = UnionFind(10)
+uf.merge(0, 2)
+uf.merge(1, 3)
+uf.merge(5, 6)
+uf.merge(5, 7)
+uf.merge(3, 0)
+print(uf.groups())
+
+print(f"isSame: {uf.same(0, 2)}, {uf.same(1, 5)}")
+print(f"Size: {uf.size(1)}, {uf.size(5)}")
+print(f"Leader: {uf.leader(0)}, {uf.leader(7)}")

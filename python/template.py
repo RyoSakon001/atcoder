@@ -32,6 +32,10 @@ max(1, 2)
 min(1, 2)
 abs(-10)
 
+# 三平方の定理
+def get_distance(p, q):
+    return (abs(p[0] - q[0]) ** 2 + abs(p[1] - q[1]) ** 2) ** 0.5
+
 # UnionFind
 from union_find import UnionFind
 uf = UnionFind(10)

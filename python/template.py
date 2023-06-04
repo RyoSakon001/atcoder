@@ -16,7 +16,11 @@ for i in range(n):
 
 # 配列作成
 arr = [0] * n
-arr = [1, 2, 3] + [4, 5, 6]
+arr = [2, 4, 6] + ['a', 'b', 'c']
+
+# 配列操作
+for i in arr:
+    print(i) # 2, 4, 6, 'a', 'b', 'c'
 
 # 最大最小・絶対値
 max(1, 2)

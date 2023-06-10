@@ -32,6 +32,21 @@ max(1, 2)
 min(1, 2)
 abs(-10)
 
+# 約数をすべて求める
+def get_divisors(num):
+    divisors = []
+    for i in range(1, num):
+        if num % i == 0:
+            divisors.append(i)
+    return divisors
+
+
+# GCD・LCM
+import math
+print(math.gcd(12, 18, 24))
+print(math.lcm(4, 5, 6))
+
+
 # 三平方の定理
 def get_distance(p, q):
     return (abs(p[0] - q[0]) ** 2 + abs(p[1] - q[1]) ** 2) ** 0.5

@@ -14,6 +14,10 @@ for i in range(n):
     arr.append(list(map(int, input().split())))
     arr.append(list(map(str, input().split())))
 
+# #と.のやつ
+for i in range(n):
+    arr.append(list(input()))
+
 # 配列作成
 arr = [0] * n
 arr = [2, 4, 6] + ['a', 'b', 'c']

@@ -30,6 +30,9 @@ for i in arr:
 s = 'abc'
 print(s[0]) # a
 
+# bit演算
+print(0b1101)
+
 
 # 最大最小・絶対値
 max(1, 2)

@@ -1,6 +1,7 @@
 from collections import deque
 
 N = int(input())
+
 S = input()
 
 A = deque([N])

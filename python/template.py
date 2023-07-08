@@ -13,6 +13,8 @@ for i in range(n):
     arr.append(input().split())
     arr.append(list(map(int, input().split())))
     arr.append(list(map(str, input().split())))
+    arr.append([int(x) for x in list(str(input()))]) # 数字の各桁を1文字ずつ格納
+
 
 # #と.のやつ
 for i in range(n):

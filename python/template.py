@@ -16,6 +16,11 @@ for i in range(n):
     arr.append([int(x) for x in list(str(input()))]) # 数字の各桁を1文字ずつ格納
 
 
+# 3 ✖︎ 5 の配列を作成
+array = [[False] * 5 for _ in range(3)]
+print(array)
+
+
 # #と.のやつ
 for i in range(n):
     arr.append(list(input()))

@@ -20,6 +20,11 @@ for i in range(n):
 array = [[False] * 5 for _ in range(3)]
 print(array)
 
+# enumerate
+fruits = ['apple', 'banana', 'orange']
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+
 
 # #と.のやつ
 for i in range(n):

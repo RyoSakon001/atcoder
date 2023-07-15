@@ -15,6 +15,12 @@ for i in range(n):
     arr.append(list(map(str, input().split())))
     arr.append([int(x) for x in list(str(input()))]) # 数字の各桁を1文字ずつ格納
 
+# forの使い方
+start = 20
+end = 10 # 1つ手前で終わる
+step = -1
+for i in range(start, end, step):
+    print(i)
 
 # 3 ✖︎ 5 の配列を作成
 array = [[False] * 5 for _ in range(3)]

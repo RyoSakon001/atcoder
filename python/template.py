@@ -22,6 +22,11 @@ step = -1
 for i in range(start, end, step):
     print(i)
 
+# sortの使い方
+arr.sort(key=lambda x: (-x[0], x[1]))
+
+
+
 # 3 ✖︎ 5 の配列を作成
 array = [[False] * 5 for _ in range(3)]
 print(array)

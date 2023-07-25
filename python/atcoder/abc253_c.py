@@ -104,3 +104,50 @@ class MultiSet:
 
     def bisect_right(self, x): # O(log n)
         return self.bit.sum(bisect.bisect_right(self.inv_compress, x))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q = int(input())
+query = [list(map(int, input().split())) for _ in range(Q)]
+
+# 座圧候補をリストアップ
+xlist = []
+for t in query:
+    if t[0] == 1 or t[0] == 2:
+        xlist.append(t[1])
+
+print(xlist)
+print('---')
+        
+        
+# 座圧してmultisetを作成 
+mset = MultiSet(compress=xlist)
+print(mset)
+print('---')
+
+# クエリーを素直に解く
+for t, *params in query:
+    if t == 1:
+        x, = params
+        mset.add(x)
+    elif t == 2:
+        x, c = params
+        count_x = mset.count(x)
+        print(x)
+        print(mset)
+        print(count_x)
+        mset.remove(x, min(c, count_x))
+    else:
+        pass
+        # print(mset[-1] - mset[0])

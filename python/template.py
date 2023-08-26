@@ -94,3 +94,15 @@ print(uf.groups())
 print(f"isSame: {uf.same(0, 2)}, {uf.same(1, 5)}")
 print(f"Size: {uf.size(1)}, {uf.size(5)}")
 print(f"Leader: {uf.leader(0)}, {uf.leader(7)}")
+
+# deque
+from collections import deque
+queue = deque()
+queue.append(1)
+queue.appendleft(2)
+queue.append(3)
+queue.appendleft(4)
+queue.pop()
+queue.popleft()
+
+print(queue)

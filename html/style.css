@@ -1,10 +1,8 @@
 div {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   height: 100vh;
 }
 
+/* 中央・縦ならべ */
 .cube1, .cube2 {
   width: 200px;
   height: 200px;
@@ -21,4 +19,14 @@ div {
 .cube2 {
   background-color: #00ff00;
   margin-top: 10px;
+}
+
+/* 枠付きリンクボタン aタグ使用 */
+.textbox-wrapper {
+  display: block;
+  text-align: center;
+  border-style: solid;
+  padding: 20px;
+  width: 200px;
+  text-decoration: none;
 }

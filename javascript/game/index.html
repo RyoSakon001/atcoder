@@ -28,6 +28,7 @@
         this.sizeX = 100
         this.sizeY = 100
         this.speed = 100
+        this.isActive = false
         img.onload = () => this.drawImage()
       }
 
@@ -36,32 +37,45 @@
       }
 
       move(e) {
-        if (e.key === "ArrowLeft") {
-          this.posX -= this.speed
-        }
-        if (e.key === "ArrowUp") {
-          this.posY -= this.speed
-        }
-        if (e.key === "ArrowRight") {
-          this.posX += this.speed
-        }
-        if (e.key === "ArrowDown") {
-          this.posY += this.speed
+        if (this.isActive) {
+          if (e.key === "ArrowLeft") {
+            this.posX -= this.speed
+          }
+          if (e.key === "ArrowUp") {
+            this.posY -= this.speed
+          }
+          if (e.key === "ArrowRight") {
+            this.posX += this.speed
+          }
+          if (e.key === "ArrowDown") {
+            this.posY += this.speed
+          }
         }
         this.drawImage()
       }
     }
 
-    let s1 = new Slime(120, 240)
-    let s2 = new Slime(240, 240)
-    let s3 = new Slime(360, 240)
+    const slimes = [
+      new Slime(120, 240),
+      new Slime(240, 240),
+      new Slime(360, 240),
+    ]
 
     window.addEventListener("keydown", (e) => {
       ctx.clearRect(0 ,0, CANVAS_SIZE_W, CANVAS_SIZE_H);
-      s1.move(e)
-      s2.move(e)
-      s3.move(e)
+      slimes.forEach((slime) => {
+        slime.move(e)
+      })
     })
+
+    window.addEventListener("click", (e) => {
+      slimes.forEach((slime) => {
+        const is_same_position = (slime.posX < e.clientX && e.clientX < slime.posX + slime.sizeX) && (slime.posY < e.clientY && e.clientY < slime.posY + slime.sizeY);
+        slime.isActive = is_same_position;
+      })
+    })
+
+
   </script>
 </body>
 

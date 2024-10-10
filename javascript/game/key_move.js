@@ -1,3 +1,9 @@
+const slimes = [
+  new Slime(120, 240),
+  new Slime(240, 240),
+  new Slime(360, 240),
+]
+
 window.addEventListener("keydown", (e) => {
   ctx.clearRect(0 ,0, CANVAS_SIZE_W, CANVAS_SIZE_H);
   slimes.forEach((slime) => {

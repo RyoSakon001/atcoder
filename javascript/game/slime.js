@@ -24,6 +24,11 @@ class Slime {
     ctx.drawImage(this.img, this.posX, this.posY, this.sizeX, this.sizeY)
   }
 
+  freeFall(speed) {
+    this.posY = this.posY + speed;
+    this.drawImage()
+  }
+
   moveByKey(e) {
     if (this.isActive) {
       if (e.key === "ArrowLeft") {
@@ -54,9 +59,3 @@ class Slime {
 function isSamePosition(e, posX, posY, sizeX, sizeY) {
   return (posX < e.clientX && e.clientX < posX + sizeX) && (posY < e.clientY && e.clientY < posY + sizeY);
 }
-
-const slimes = [
-  new Slime(120, 240),
-  new Slime(240, 240),
-  new Slime(360, 240),
-]

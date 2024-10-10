@@ -6,7 +6,7 @@ const CANVAS_SIZE_HH = 240 // 画面の半分の高さ(Half Height)
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
-class Leaf {
+class Coin {
   constructor(
     posX,
     posY,
@@ -14,7 +14,7 @@ class Leaf {
     speed=100,
   ) {
     const img = new Image()
-    img.src = "./images/leaf.png"
+    img.src = "./images/coin.png"
     this.img = img
     this.posX = posX
     this.posY = posY

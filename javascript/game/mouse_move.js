@@ -67,21 +67,9 @@ window.addEventListener("mousedown", (e) => {
     slime.isActive = is_same_position;
     slime.img.src =  is_same_position ? "./images/slime_red.png" : "./images/slime.png";
   })
-
 })
 
 window.addEventListener("mousemove", (e) => {
-  let moveFlag = false;
-  slimes.forEach((slime) => {
-    if (slime.isActive) {
-      moveFlag = true;
-    }
-  })
-
-  if (!moveFlag) {
-    return;
-  }
-
   ctx.clearRect(0 ,0, CANVAS_SIZE_W, CANVAS_SIZE_H);
   slimes.forEach((slime) => {
     slime.moveByMouse(e)

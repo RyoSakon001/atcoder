@@ -13,4 +13,5 @@ const intervalId = setInterval(() => {
 
   if(count > 10) {
     clearInterval(intervalId);
-  }}, 1000);
+  }
+}, 1000);

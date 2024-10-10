@@ -7,15 +7,20 @@ const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
 class Slime {
-  constructor(posX, posY) {
+  constructor(
+    posX,
+    posY,
+    size=100,
+    speed=100,
+  ) {
     const img = new Image()
     img.src = "./images/slime.png"
     this.img = img
     this.posX = posX
     this.posY = posY
-    this.sizeX = 100
-    this.sizeY = 100
-    this.speed = 100
+    this.sizeX = size
+    this.sizeY = size
+    this.speed = speed
     this.isActive = false
     img.onload = () => this.drawImage()
   }

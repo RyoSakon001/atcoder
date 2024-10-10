@@ -1,9 +1,9 @@
-const leaves = [
-  new Leaf(0, 0),
-  new Leaf(0, 0),
-  new Leaf(0, 0),
-  new Leaf(0, 0),
-  new Leaf(0, 0),
+const coins = [
+  new Coin(0, 0),
+  new Coin(0, 0),
+  new Coin(0, 0),
+  new Coin(0, 0),
+  new Coin(0, 0),
 ];
 
 let count = 0;
@@ -11,24 +11,24 @@ let score = 0;
 
 const intervalId = setInterval(() => {
   ctx.clearRect(0 ,0, CANVAS_SIZE_W, CANVAS_SIZE_H);
-  leaves.forEach((leaf) => {
-    leaf.posX = Math.floor(Math.random() * 540) + 50;
-    leaf.posY = Math.floor(Math.random() * 390) + 50;
-    leaf.drawImage()
+  coins.forEach((coin) => {
+    coin.posX = Math.floor(Math.random() * 540) + 50;
+    coin.posY = Math.floor(Math.random() * 390) + 50;
+    coin.drawImage()
   });
 
   if(count > 10) {
     clearInterval(intervalId);
   }
-}, 1500);
+}, 2000);
 
 let scoreContent = document.getElementById("score");
 
 window.addEventListener("click", (e) => {
-  leaves.forEach((leaf) => {
-    const is_same_position = (leaf.posX < e.clientX && e.clientX < leaf.posX + leaf.sizeX) && (leaf.posY < e.clientY && e.clientY < leaf.posY + leaf.sizeY);
+  coins.forEach((coin) => {
+    const is_same_position = (coin.posX < e.clientX && e.clientX < coin.posX + coin.sizeX) && (coin.posY < e.clientY && e.clientY < coin.posY + coin.sizeY);
     if (is_same_position) {
-      score += 10;
+      score += 100;
       scoreContent.textContent = score;
 
       console.log(score);

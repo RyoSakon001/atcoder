@@ -1,0 +1,62 @@
+const CANVAS_SIZE_W = 640
+const CANVAS_SIZE_HW = 320 // 画面の半分の広さ(Half Width)
+const CANVAS_SIZE_H = 480
+const CANVAS_SIZE_HH = 240 // 画面の半分の高さ(Half Height)
+
+const canvas = document.getElementById("canvas")
+const ctx = canvas.getContext("2d")
+
+class Leaf {
+  constructor(
+    posX,
+    posY,
+    size=100,
+    speed=100,
+  ) {
+    const img = new Image()
+    img.src = "./images/leaf.png"
+    this.img = img
+    this.posX = posX
+    this.posY = posY
+    this.sizeX = size
+    this.sizeY = size
+    this.speed = speed
+    this.isActive = false
+    img.onload = () => this.drawImage()
+  }
+
+  drawImage() {
+    ctx.drawImage(this.img, this.posX, this.posY, this.sizeX, this.sizeY)
+  }
+
+  freeFall(speed) {
+    this.posY = this.posY + speed;
+    this.drawImage()
+  }
+
+  moveByKey(e) {
+    if (this.isActive) {
+      if (e.key === "ArrowLeft") {
+        this.posX -= this.speed
+      }
+      if (e.key === "ArrowUp") {
+        this.posY -= this.speed
+      }
+      if (e.key === "ArrowRight") {
+        this.posX += this.speed
+      }
+      if (e.key === "ArrowDown") {
+        this.posY += this.speed
+      }
+    }
+    this.drawImage()
+  }
+
+  moveByMouse(e) {
+    if (this.isActive) {
+      this.posX = e.clientX - this.sizeX / 2
+      this.posY = e.clientY - this.sizeY / 2
+    }
+    this.drawImage()
+  }
+}

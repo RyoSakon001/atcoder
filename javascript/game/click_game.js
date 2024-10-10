@@ -1,23 +1,38 @@
-const slimes = [];
+const leaves = [
+  new Leaf(0, 0),
+  new Leaf(0, 0),
+  new Leaf(0, 0),
+  new Leaf(0, 0),
+  new Leaf(0, 0),
+];
 
-for (var i = 0; i < 5; i++) {
-  const randX = Math.floor(Math.random() * 540) + 50;
-  const randSpeed = Math.floor(Math.random() * 100) + 10;
-  slimes.push(new Slime(randX, 0, 40, randSpeed));
-}
+let count = 0;
+let score = 0;
 
-window.addEventListener("keydown", (e) => {
+const intervalId = setInterval(() => {
   ctx.clearRect(0 ,0, CANVAS_SIZE_W, CANVAS_SIZE_H);
-  slimes.forEach((slime) => {
-    slime.moveByKey(e)
-  })
-})
+  leaves.forEach((leaf) => {
+    leaf.posX = Math.floor(Math.random() * 540) + 50;
+    leaf.posY = Math.floor(Math.random() * 390) + 50;
+    leaf.drawImage()
+  });
+
+  if(count > 10) {
+    clearInterval(intervalId);
+  }
+}, 1500);
+
+let scoreContent = document.getElementById("score");
 
 window.addEventListener("click", (e) => {
-  slimes.forEach((slime) => {
-    const is_same_position = (slime.posX < e.clientX && e.clientX < slime.posX + slime.sizeX) && (slime.posY < e.clientY && e.clientY < slime.posY + slime.sizeY);
-    slime.isActive = is_same_position;
-    slime.img.src =  is_same_position ? "./images/slime_red.png" : "./images/slime.png";
+  leaves.forEach((leaf) => {
+    const is_same_position = (leaf.posX < e.clientX && e.clientX < leaf.posX + leaf.sizeX) && (leaf.posY < e.clientY && e.clientY < leaf.posY + leaf.sizeY);
+    if (is_same_position) {
+      score += 10;
+      scoreContent.textContent = score;
+
+      console.log(score);
+    }
   })
 })
 
